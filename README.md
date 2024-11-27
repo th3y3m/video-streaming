@@ -1,11 +1,11 @@
-# Vimeo API Integration
+# Video Streaming Integration
 
-Welcome to the **Vimeo API Integration** project! This repository showcases how to seamlessly interact with the Vimeo API using .NET, React, and ASP.NET Core. Whether you're looking to upload videos or manage them programmatically, this project has got you covered.
+Welcome to the **Video Streaming Integration** project! This repository showcases how to seamlessly interact with Vimeo, YouTube, and Cloudinary APIs using .NET, React, and ASP.NET Core. Whether you're looking to upload videos, manage them programmatically, or delete them, this project has got you covered.
 
 ## 🚀 Features
 
-- **Upload Videos**: Effortlessly upload video files to Vimeo and retrieve the video link.
-- **Delete Videos**: Programmatically delete videos from your Vimeo account.
+- **Upload Videos**: Effortlessly upload video files to Vimeo, YouTube, and Cloudinary and retrieve the video link.
+- **Delete Videos**: Programmatically delete videos from your Vimeo, YouTube, and Cloudinary accounts.
 - **Error Handling**: Robust error handling for common issues like invalid file paths or API errors.
 
 ## 🛠️ Tech Stack
@@ -14,12 +14,19 @@ Welcome to the **Vimeo API Integration** project! This repository showcases how 
 - **React**: For a dynamic and responsive user interface.
 - **ASP.NET Core**: To build a robust and scalable backend.
 - **VimeoDotNet**: The library that makes Vimeo API interactions a breeze.
-- **react-player/vimeo**: For seamless video playback integration.
+- **YouTube Data API**: For seamless integration with YouTube.
+- **Cloudinary**: For powerful media management and delivery.
+- **react-player**: For seamless video playback integration.
 
 ## 📋 Prerequisites
 
 - **Vimeo Account**: Sign up for a Vimeo account to generate an access token.
-- **API Access Token**: Obtain your access token from the [Vimeo Developer Portal](https://developer.vimeo.com/apps).
+- **YouTube Account**: Sign up for a YouTube account and obtain API credentials.
+- **Cloudinary Account**: Sign up for a Cloudinary account to get your API key and secret.
+- **API Access Tokens**: Obtain your access tokens from the respective developer portals:
+  - [Vimeo Developer Portal](https://developer.vimeo.com/apps)
+  - [YouTube Developer Portal](https://console.developers.google.com/)
+  - [Cloudinary Console](https://cloudinary.com/console)
 - **.NET Installed**: Ensure you have .NET 8 or later installed on your machine.
 
 ## 📧 Connect with Me
