@@ -34,7 +34,7 @@ export const VideoUpload = () => {
         formData.append('description', videoDescription);
 
         try {
-            const response = await axios.post('https://localhost:7121/api/videos/upload', formData, {
+            const response = await axios.post('https://localhost:8080/api/videos/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

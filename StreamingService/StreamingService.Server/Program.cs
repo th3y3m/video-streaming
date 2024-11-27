@@ -1,4 +1,4 @@
-using VimeoDemo.Services;
+using StreamingService.Services;
 
 namespace StreamingService.Server
 {
@@ -16,6 +16,8 @@ namespace StreamingService.Server
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddScoped<VimeoService>();
+            builder.Services.AddScoped<CloudinaryService>();
+            builder.Services.AddScoped<YoutubeService>();
 
             builder.Services.AddCors(options =>
             {

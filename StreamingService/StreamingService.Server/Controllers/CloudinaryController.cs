@@ -6,17 +6,17 @@ namespace StreamingService.Server.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class VimeoController : ControllerBase
+    public class CloudinaryController : ControllerBase
     {
-        private readonly VimeoService _vimeoService;
+        private readonly CloudinaryService _cloudinaryService;
 
-        public VimeoController(VimeoService vimeoService)
+        public CloudinaryController(CloudinaryService cloudinaryService)
         {
-            _vimeoService = vimeoService;
+            _cloudinaryService = cloudinaryService;
         }
 
         [HttpPost("upload")]
-        public async Task<IActionResult> UploadVideoAsync([FromForm] UploadVideoVimeoRequest r)
+        public async Task<IActionResult> UploadVideoAsyncUsingCloudinary([FromForm] UploadVideoCloudinaryRequest r)
         {
             var filePath = Path.GetTempFileName();
             try
@@ -27,10 +27,8 @@ namespace StreamingService.Server.Controllers
                     await r.video.CopyToAsync(stream);
                 }
 
-                // Use Vimeo service to upload the file
-                var url = await _vimeoService.UploadVideoAsync(filePath);
+                var url = await _cloudinaryService.UploadVideoAsync(filePath);
 
-                // Return the video URI (e.g., "/videos/123456789")
                 return Ok(new { message = "Video uploaded successfully!", url });
             }
             catch (Exception ex)
@@ -47,11 +45,11 @@ namespace StreamingService.Server.Controllers
         }
 
         [HttpPost("delete")]
-        public async Task<IActionResult> DeleteVideoAsync(long id)
+        public async Task<IActionResult> DeleteVideoAsync(string id)
         {
             try
             {
-                await _vimeoService.DeleteVideoAsync(id);
+                await _cloudinaryService.DeleteVideoAsync(id);
                 return Ok(new { message = "Video is deleted successfully!" });
             }
             catch (Exception ex)

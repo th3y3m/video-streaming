@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\VimeoDemo.Services\VimeoDemo.Services.csproj" />
+    <ProjectReference Include="..\..\StreamingService.Services\StreamingService.Services.csproj" />
     <ProjectReference Include="..\streamingservice.client\streamingservice.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
