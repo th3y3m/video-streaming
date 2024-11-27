@@ -28,7 +28,7 @@ namespace StreamingService.Server.Controllers
                 }
 
                 // Use Vimeo service to upload the file
-                var url = await _vimeoService.UploadVideoAsync(filePath);
+                var url = await _vimeoService.UploadVideoAsync(filePath, r.title, r.description);
 
                 // Return the video URI (e.g., "/videos/123456789")
                 return Ok(new { message = "Video uploaded successfully!", url });
