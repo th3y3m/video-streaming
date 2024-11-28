@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/th3y3m/video-streaming/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/th3y3m/video-streaming/actions/workflows/github-code-scanning/codeql)
+
 # Video Streaming Integration
 
 Welcome to the **Video Streaming Integration** project! This repository showcases how to seamlessly interact with Vimeo, YouTube, and Cloudinary APIs using .NET, React, and ASP.NET Core. Whether you're looking to upload videos, manage them programmatically, or delete them, this project has got you covered.
