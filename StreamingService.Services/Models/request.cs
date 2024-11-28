@@ -25,4 +25,9 @@ namespace StreamingService.Services.Models
         public string title { get; set; }
         public string description { get; set; }
     }
+
+    public class ScanFileRequest
+    {
+        public required IFormFile video { get; set; }
+    }
 }

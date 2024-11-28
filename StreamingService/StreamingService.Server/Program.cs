@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
+using StreamingService.Server.Controllers;
 using StreamingService.Services;
 
 namespace StreamingService.Server
@@ -13,11 +16,28 @@ namespace StreamingService.Server
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.EnableAnnotations();
+            });
+
+            builder.Services.Configure<FormOptions>(options =>
+            {
+                options.MultipartBodyLengthLimit = 1000 * 1024 * 1024;
+            });
+
+            builder.Services.Configure<KestrelServerOptions>(options =>
+            {
+                options.Limits.MaxRequestBodySize = 1000 * 1024 * 1024;
+            });
 
             builder.Services.AddScoped<VimeoService>();
             builder.Services.AddScoped<CloudinaryService>();
             builder.Services.AddScoped<YoutubeService>();
+            builder.Services.AddScoped<VirusTotalService>();
+            builder.Services.AddScoped<ClamAVService>();
+            builder.Services.AddScoped<HybridAnalysisService>();
+            builder.Services.AddScoped<WindowsDefenderService>();
 
             builder.Services.AddCors(options =>
             {

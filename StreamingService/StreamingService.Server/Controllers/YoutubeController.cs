@@ -21,7 +21,6 @@ namespace StreamingService.Server.Controllers
             var filePath = Path.GetTempFileName();
             try
             {
-                // Save the file temporarily on disk
                 using (var stream = System.IO.File.Create(filePath))
                 {
                     await r.video.CopyToAsync(stream);
