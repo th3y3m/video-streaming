@@ -7,6 +7,7 @@ Welcome to the **Video Streaming Integration** project! This repository showcase
 - **Upload Videos**: Effortlessly upload video files to Vimeo, YouTube, and Cloudinary and retrieve the video link.
 - **Delete Videos**: Programmatically delete videos from your Vimeo, YouTube, and Cloudinary accounts.
 - **Error Handling**: Robust error handling for common issues like invalid file paths or API errors.
+- **File Scanning**: Integrate with VirusTotalAPI, ClamAV, Windows Defender, and Hybrid Analysis for comprehensive file scanning.
 
 ## 🛠️ Tech Stack
 
@@ -17,6 +18,10 @@ Welcome to the **Video Streaming Integration** project! This repository showcase
 - **YouTube Data API**: For seamless integration with YouTube.
 - **Cloudinary**: For powerful media management and delivery.
 - **react-player**: For seamless video playback integration.
+- **VirusTotalAPI**: For file scanning and malware detection.
+- **ClamAV**: Open-source antivirus engine for detecting trojans, viruses, malware, and other malicious threats.
+- **Windows Defender**: Built-in antivirus protection for Windows.
+- **Hybrid Analysis**: Advanced malware analysis service for detecting and analyzing threats.
 
 ## 📋 Prerequisites
 
