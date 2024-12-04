@@ -2,6 +2,7 @@
 using VimeoDotNet;
 using VimeoDotNet.Models;
 using VimeoDotNet.Net;
+using Xabe.FFmpeg;
 
 namespace StreamingService.Services
 {
@@ -47,6 +48,9 @@ namespace StreamingService.Services
 
             try
             {
+                IMediaInfo mediaInfo = await FFmpeg.GetMediaInfo(filePath);
+                var duration = mediaInfo.Duration;
+
                 // Convert the file path to IBinaryContent
                 var fileContent = new BinaryContent(filePath);
 
