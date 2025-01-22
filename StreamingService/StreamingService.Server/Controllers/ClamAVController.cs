@@ -1,11 +1,6 @@
-﻿using ClamAV.Net.Client;
-using Microsoft.AspNetCore.Mvc;
-using nClam;
+﻿using Microsoft.AspNetCore.Mvc;
 using StreamingService.Services;
 using StreamingService.Services.Models;
-using System.IO;
-using System.Net.Sockets;
-using System.Threading.Tasks;
 
 namespace YourNamespace.Controllers
 {

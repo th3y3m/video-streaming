@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using StreamingService.Server.Controllers;
 using StreamingService.Services;
 
 namespace StreamingService.Server
@@ -32,12 +31,26 @@ namespace StreamingService.Server
             });
 
             builder.Services.AddScoped<VimeoService>();
+            builder.Services.Configure<IISServerOptions>(options =>
+            {
+                options.MaxRequestBodySize = 10L * 1024 * 1024 * 1024;  // 10GB
+            });
+
+            builder.Services.Configure<FormOptions>(options =>
+            {
+                options.MultipartBodyLengthLimit = 10L * 1024 * 1024 * 1024;  // 10GB
+            });
             builder.Services.AddScoped<CloudinaryService>();
             builder.Services.AddScoped<YoutubeService>();
             builder.Services.AddScoped<VirusTotalService>();
             builder.Services.AddScoped<ClamAVService>();
+            builder.Services.AddScoped<MuxService>();
             builder.Services.AddScoped<HybridAnalysisService>();
             builder.Services.AddScoped<WindowsDefenderService>();
+
+            builder.Services.AddHttpClient<MuxService>()
+    .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://api.mux.com/"));
+
 
             builder.Services.AddCors(options =>
             {

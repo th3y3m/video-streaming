@@ -45,7 +45,7 @@ namespace StreamingService.Server.Controllers
                 }
             }
         }
-        
+
         // Premium Vimeo API
         [HttpPost("upload-v2")]
         public async Task<IActionResult> UploadVideoAndGetMp4LinkAsync([FromForm] UploadVideoVimeoRequest r)
